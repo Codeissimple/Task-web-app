@@ -9,31 +9,33 @@
   <body>
     <div style='text'><H1> To Do List</H1></div>
     <div style='box'>
-      <button onclick='handlers.toggleAll()'>Toggle All</button>
+      <button onclick='handlers.toggleAll()'>Toggle All Complete</button>
       </div>
       <br>
       <div>
     <button onclick='handlers.addTodo()'>Add New Task</button>
-    <input id='addNewTaskText' type='text'>
+    <input id='addNewTaskText' type='text' placeholder='What is it?'>
       </div> 
       <br>
       <div>
         <button onclick='handlers.changeTodo()'>Change Task </button>
-        <input id='changeTaskPositionInput' type="number">
-        <input id='changeTaskTextInput' type="text">
+        <input id='changeTaskPositionInput' type='number' placeholder='Task position - 0 to 99'>
+        <input id='changeTaskTextInput' type='text' placeholder='New text'>
       </div>
     <br>
     <div>
       <button onclick='handlers.toggleCompleted()'>Toggle Complete</button>
-      <input id='toggleCompletedPositionInput' type='number'>
+      <input id='toggleCompletedPositionInput' type='number' placeholder='Task position'>
     </div>
     <br>
     <br>
     <div>
       
       <ul>
-        
       </ul>
+      <br>
+      <h3>Your Task list will appear above</h3>
+      
     </div>
     
     
