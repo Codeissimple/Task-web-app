@@ -7,36 +7,37 @@
   </head>
 
   <body>
-    <div style='text'><H1> To Do List</H1></div>
-    <div style='box'>
-      <button onclick='handlers.toggleAll()'>Toggle All Complete</button>
+   <div class='main'> 
+    <div class='box'>
+      <div class='text'><H1> To Do List</H1></div>
+      <div class='entry'>
+        <button onclick='handlers.toggleAll()'>Complete All</button>
       </div>
-      <br>
-      <div>
-    <button onclick='handlers.addTodo()'>Add New Task</button>
-    <input id='addNewTaskText' type='text' placeholder='What is it?'>
+        <br>
+      <div class='entry'>
+        <button onclick='handlers.addTodo()'>Add New Task</button>
+        <input id='addNewTaskText' type='text' placeholder='Enter text of yout task'>
       </div> 
-      <br>
-      <div>
-        <button onclick='handlers.changeTodo()'>Change Task </button>
-        <input id='changeTaskPositionInput' type='number' placeholder='Task position - 0 to 99'>
-        <input id='changeTaskTextInput' type='text' placeholder='New text'>
+        <br>
+      <div class='entry'>
+        <button onclick='handlers.changeTodo()'>Edit Task </button>
+        <input size='10' id='changeTaskPositionInput' type="number" placeholder='0'>
+        <input id='changeTaskTextInput' type="text" placeholder='Enter new text'>
       </div>
-    <br>
-    <div>
-      <button onclick='handlers.toggleCompleted()'>Toggle Complete</button>
-      <input id='toggleCompletedPositionInput' type='number' placeholder='Task position - 0 to 99'>
+          <br>
+      <div class='entry'>
+        <button onclick='handlers.toggleCompleted()'> Complete single task </button>
+        <input id='toggleCompletedPositionInput' type='number' placeholder='0'>
+      </div>
+        <br>
+        <br>
+      <div class='box'>
+        <ul>
+        
+        </ul>
+      </div>
     </div>
-    <br>
-    <br>
-    <div>
-      
-      <ul>
-      </ul>
-      <br>
-      <h3>Your Task list will appear above</h3>
-      
-    </div>
+   </div>
     
     
     
