@@ -56,10 +56,8 @@ var todoList = {
         changeTaskTextInput.value = "";
         view.displayTodos();
       },
-      toggleCompleted: function() {
-        var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
-        todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
-        toggleCompletedPositionInput.value = '';
+      toggleCompleted: function(position) {
+        todoList.toggleCompleted(position);
         view.displayTodos();
       },
       toggleAll: function() {
@@ -81,7 +79,7 @@ var todoList = {
           } else {
             todoTextWithCompletion = "( ) " +  todo.todoText;            
           }
-            todoLi.id = position;
+          todoLi.id = position;
           todoLi.textContent = todoTextWithCompletion;
           todoLi.append(" - ");
           todoLi.appendChild(this.createCompleteButton());
@@ -116,6 +114,8 @@ var todoList = {
           var elementClicked = event.target;
           if (elementClicked.className === 'deleteButton') {
             handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+          } else if (elementClicked.className === 'completeButton'){
+            handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
           }
     });
     }
