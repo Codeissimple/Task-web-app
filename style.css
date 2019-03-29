@@ -1,1 +1,14 @@
-//style goes here
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addNewTaskText {
+  width: 176px;
+}
+
+input[type="number"] {
+    width: 30px;
+}
