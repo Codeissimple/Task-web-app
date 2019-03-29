@@ -83,10 +83,27 @@ var todoList = {
           }
             todoLi.id = position;
           todoLi.textContent = todoTextWithCompletion;
+          todoLi.append(" - ");
+          todoLi.appendChild(this.createCompleteButton());
+          todoLi.append(" - ");
+          todoLi.appendChild(this.createEditButton());
+          todoLi.append(" - ");
           todoLi.appendChild(this.createDeleteButton());
           todosUl.appendChild(todoLi);
         }, this);
       },
+        createCompleteButton: function() {
+          var completeButton = document.createElement('button');
+          completeButton.textContent = 'Complete';
+          completeButton.className = 'completeButton'
+          return completeButton;
+        },
+        createEditButton: function() {
+          var editButton = document.createElement('button');
+          editButton.textContent = 'Edit task';
+          editButton.className = 'editButton'
+          return editButton;
+        },
         createDeleteButton: function() {
           var deleteButton = document.createElement('button');
           deleteButton.textContent = 'Delete';
