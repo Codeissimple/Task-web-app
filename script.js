@@ -56,10 +56,8 @@ var todoList = {
         changeTaskTextInput.value = "";
         view.displayTodos();
       },
-      toggleCompleted: function() {
-        var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
-        todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
-        toggleCompletedPositionInput.value = '';
+      toggleCompleted: function(position) {
+        todoList.toggleCompleted(position);
         view.displayTodos();
       },
       toggleAll: function() {
@@ -81,12 +79,29 @@ var todoList = {
           } else {
             todoTextWithCompletion = "( ) " +  todo.todoText;            
           }
-            todoLi.id = position;
+          todoLi.id = position;
           todoLi.textContent = todoTextWithCompletion;
+          todoLi.append(" - ");
+          todoLi.appendChild(this.createCompleteButton());
+          todoLi.append(" - ");
+          todoLi.appendChild(this.createEditButton());
+          todoLi.append(" - ");
           todoLi.appendChild(this.createDeleteButton());
           todosUl.appendChild(todoLi);
         }, this);
       },
+        createCompleteButton: function() {
+          var completeButton = document.createElement('button');
+          completeButton.textContent = 'Complete';
+          completeButton.className = 'completeButton'
+          return completeButton;
+        },
+        createEditButton: function() {
+          var editButton = document.createElement('button');
+          editButton.textContent = 'Edit task';
+          editButton.className = 'editButton'
+          return editButton;
+        },
         createDeleteButton: function() {
           var deleteButton = document.createElement('button');
           deleteButton.textContent = 'Delete';
@@ -99,6 +114,8 @@ var todoList = {
           var elementClicked = event.target;
           if (elementClicked.className === 'deleteButton') {
             handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+          } else if (elementClicked.className === 'completeButton'){
+            handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
           }
     });
     }
