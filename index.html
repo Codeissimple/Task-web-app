@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
   <head>
@@ -10,10 +9,7 @@
    <div class='main'> 
     <div class='box'>
       <div class='text'><H1> To Do List</H1></div>
-      <div class='entry'>
-        <button onclick='handlers.toggleAll()'>Complete All</button>
-      </div>
-        <br>
+
       <div class='entry'>
         <button onclick='handlers.addTodo()'>Add New Task</button>
         <input id='addNewTaskText' type='text' placeholder='Enter text of yout task'>
@@ -24,23 +20,21 @@
         <input size='10' id='changeTaskPositionInput' type="number" placeholder='0'>
         <input id='changeTaskTextInput' type="text" placeholder='Enter new text'>
       </div>
-          <br>
-      <div class='entry'>
-        <button onclick='handlers.toggleCompleted()'> Complete single task </button>
-        <input id='toggleCompletedPositionInput' type='number' placeholder='0'>
+        <br>
+        <div class='entry'>
+        <button onclick='handlers.toggleAll()'>Complete All</button>
       </div>
+
+          <br>
         <br>
         <br>
-      <div class='box'>
+      </div>
+      <div class='list'>
         <ul>
         
         </ul>
       </div>
-    </div>
    </div>
-    
-    
-    
     <script src="script.js"></script>
   </body>
 
