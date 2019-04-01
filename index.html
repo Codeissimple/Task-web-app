@@ -1,8 +1,20 @@
+<!DOCTYPE html>
 <html>
 
   <head>
-    <link rel="stylesheet" href="style.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <style>
+      html, body, pre, code, kbd, samp {
+          font-family: "Press Start 2P";
+      }
+      
+      ul li {
+        "nes-text is-success";
+      }
+    </style>
+    <span class="nes-text is-success">Success</span>
   </head>
 
   <body>
@@ -12,7 +24,7 @@
 
       <div class='entry'>
         <button onclick='handlers.addTodo()'>Add New Task</button>
-        <input id='addNewTaskText' type='text' placeholder='Enter text of yout task'>
+        <input id='addNewTaskText' type='text' span class="nes-text is-success" placeholder='Enter text of yout task'>
       </div> 
         <br>
       <div class='entry'>
@@ -30,7 +42,7 @@
         <br>
       </div>
       <div class='list'>
-        <ul>
+        <ul span class="nes-text is-success">
         
         </ul>
       </div>
