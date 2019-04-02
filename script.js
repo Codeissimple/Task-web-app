@@ -48,8 +48,6 @@ var todoList = {
         todoList.deleteTodo(position);
         view.displayTodos();
       },
-        
-        //this function has to be changed.
       changeTodo: function() {
         var changeTaskPositionInput = document.getElementById('changeTaskPositionInput');
         var changeTaskTextInput = document.getElementById('changeTaskTextInput');
@@ -120,6 +118,17 @@ var todoList = {
             handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
           }
     });
-    }
+    },
+    //Enter new task, when user hits Enter button
+        setUpButtonListener: function() {
+          var hitEnter = document.getElementById("addNewTaskText");
+          addNewTaskText.addEventListener("keyup", function(event) {
+           if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("addButton").click();
+            }
+          });
+        }
     };
     view.setUpEventListeners();
+    view.setUpButtonListener();
