@@ -48,6 +48,8 @@ var todoList = {
         todoList.deleteTodo(position);
         view.displayTodos();
       },
+        
+        //this function has to be changed.
       changeTodo: function() {
         var changeTaskPositionInput = document.getElementById('changeTaskPositionInput');
         var changeTaskTextInput = document.getElementById('changeTaskTextInput');
